@@ -41,9 +41,7 @@ fn parse_games(input: &str) -> Vec<Game> {
         let mut rounds = Vec::new();
         let reveals = reveals.split("; ");
         for reveal in reveals {
-            let mut red = 0;
-            let mut green = 0;
-            let mut blue = 0;
+            let (mut red, mut green, mut blue) = (0, 0, 0);
             let colors = reveal.split(", ");
             for color in colors {
                 let (num, col) = color.split_once(' ').unwrap();
